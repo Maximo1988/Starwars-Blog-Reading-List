@@ -3,33 +3,29 @@ import { Link } from "react-router-dom";
 
 export const Navbar = () => {
   return (
-    <nav className="navbar navbar-light bg-light mb-3">
+    <nav className="navbar navbar-dark bg-light mb-3">
       <Link to="/">
-        <span
-          className="navbar-brand mb-0 h1"
->
-          FontAwesomeIcon
-          icon="fa-solid fa-starfighter"
-        </span>
+        <p><i className="fa-solid fa-starfighter"/>
+        Star Wars{" "}
+		    </p>
       </Link>
-      <div className="ml-auto">
-        <Link to="/tarjetas">
-          <div class="dropdown">
+      <div className="ml-50">
+        <Link to="/personajes">
+          <div className="dropdown">
             <button
               type="button"
-              class="btn btn-primary dropdown-toggle"
-              data-toggle="dropdown"
-            >
+              className="btn btn-primary dropdown-toggle"
+              data-toggle="dropdown">
               Favorites
             </button>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">
+            <div className="dropdown-menu">
+              <a className="dropdown-item" href="#">
                 Link 1
               </a>
-              <a class="dropdown-item" href="#">
+              <a className="dropdown-item" href="#">
                 Link 2
               </a>
-              <a class="dropdown-item" href="#">
+              <a className="dropdown-item" href="#">
                 Link 3
               </a>
             </div>
