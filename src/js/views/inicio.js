@@ -1,7 +1,10 @@
-import React from "react";
+import React, {useContext} from "react";
 import { Link } from "react-router-dom";
+import {Context} from "../store/appContext";
 
 const Inicio = () => {
+  const {store, actions} = useContext(Context);
+  console.log(store.personajes);
   return (
     <div className="row flex-fill vh-100">
       <div className="col-2 bg-dark"></div>

@@ -12,6 +12,10 @@ export const Single = props => {
 
 			<hr className="my-4" />
 
+			{store.personajes.map((item, index)=>{
+				return <h4 key={index}>{item.name} {item-url}</h4>
+			})}
+
 			<Link to="/">
 				<span className="btn btn-primary btn-lg" href="#" role="button">
 					Back home

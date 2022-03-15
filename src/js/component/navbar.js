@@ -16,17 +16,17 @@ export const Navbar = () => {
               type="button"
               className="btn btn-primary dropdown-toggle"
               data-toggle="dropdown">
-              Favorites
+              Favoritos
             </button>
             <div className="dropdown-menu">
               <a className="dropdown-item" href="#">
-                Link 1
+                <h3>Link 1</h3>
               </a>
               <a className="dropdown-item" href="#">
-                Link 2
+                <h3>Link 2</h3>
               </a>
               <a className="dropdown-item" href="#">
-                Link 3
+                <h3>Link 3</h3>
               </a>
             </div>
           </div>
