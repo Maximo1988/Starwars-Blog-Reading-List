@@ -14,7 +14,11 @@ const getState = ({ getStore, getActions, setStore }) => {
         },
       ],
       personajes: [],
-	  planetas: [],
+      personaje:{},
+	    planetas: [],
+      planeta: [],
+      naves: [],
+      nave: [],
     },
 
     actions: {
@@ -29,7 +33,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
 
       ObtenerPersonajes: () => {
-        fetch("https://www.swapi.tech/api/people/")
+        fetch("https://swapi.dev/api/people/")
           .then((res) => res.json())
           .then((response) => {
             setStore({ personajes: response.results });
@@ -42,6 +46,15 @@ const getState = ({ getStore, getActions, setStore }) => {
           .then((res) => res.json())
           .then((response) => {
             setStore({ planetas: response.results });
+          })
+          .catch(console.error());
+      },
+
+      ObtenerNaves: () => {
+        fetch("https://www.swapi.tech/api/starships/")
+          .then((res) => res.json())
+          .then((response) => {
+            setStore({ naves: response.results });
           })
           .catch(console.error());
       },
@@ -60,6 +73,33 @@ const getState = ({ getStore, getActions, setStore }) => {
         //reset the global store
         setStore({ demo: demo });
       },
+      getCharacter: id => {
+				const store = getStore();
+				fetch("https://www.swapi.tech/api/people/" + id)
+					.then(res => res.json())
+					.then(data => {
+						setStore({personaje: data.result });
+					})
+					.catch(err => err);
+			},
+      getPlanet: id => {
+				const store = getStore();
+				fetch("https://www.swapi.tech/api/planet/" + id)
+					.then(res => res.json())
+					.then(data => {
+						setStore({planet: data.result });
+					})
+					.catch(err => err);
+			},
+      getStarship: id => {
+				const store = getStore();
+				fetch("https://www.swapi.tech/api/starship/" + id)
+					.then(res => res.json())
+					.then(data => {
+						setStore({starship: data.result });
+					})
+					.catch(err => err);
+			},
     },
   };
 };
