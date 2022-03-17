@@ -18,7 +18,7 @@ const Inicio = (props) => {
               <h3 className="mt-3">Personajes</h3>
               {store.personajes.map((itempersonaje, i) => {
                 return (
-                  <Cardpeople key={itempersonaje.url} item={itempersonaje} />
+                  <Cardpeople key={i} item={itempersonaje} uid={i+1}/>
                 );
               })}
             </li>

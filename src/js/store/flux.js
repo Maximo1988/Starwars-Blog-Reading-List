@@ -14,7 +14,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         },
       ],
       personajes: [],
-      personaje:{},
+      personaje: [],
 	    planetas: [],
       planeta: [],
       naves: [],

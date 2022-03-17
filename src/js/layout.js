@@ -37,13 +37,13 @@ const Layout = () => {
             <Route exact path="/cardstarships">
               <Cardstarships></Cardstarships>
             </Route>
-            <Route exact path="/singlepsj:theid">
+            <Route exact path="/singlepsj/:uid">
               <Singlepsj></Singlepsj>
             </Route>
-            <Route exact path="/singlepla:theid">
+            <Route exact path="/singlepla/:uid">
               <Singlepla></Singlepla>
             </Route>
-            <Route exact path="/singlests:theid">
+            <Route exact path="/singlests/:uid">
               <Singlests></Singlests>
             </Route>
           </Switch>
