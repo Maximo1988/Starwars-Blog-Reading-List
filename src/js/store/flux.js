@@ -66,7 +66,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
       EliminarFavorito:(i)=>{
         setStore({Favorito: getStore().Favorito.filter(
-          (item,index) => index !== i)})
+          (index) => index !== i)})
         console.log("funciona");
       },
 

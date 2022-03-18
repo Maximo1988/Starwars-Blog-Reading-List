@@ -21,7 +21,11 @@ const Cardpeople = ({ item, uid }) => {
           <Link to={`/singlepsj/${uid}`} className="btn btn-primary col-10">
             Learn more!
           </Link>
-          <i className="fa fa-heart-o col-2" aria-hidden="true" />
+          <div className="col-6">
+              <button type="button" className="btn btn-outline-warning d-flex justify-content-end ">
+                <i className="bi bi-heart"  onClick={()=>actions.AgregarFavorito(item.name)}></i>
+              </button>
+          </div>
         </div>
       </div>
     </div>

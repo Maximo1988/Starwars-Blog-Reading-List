@@ -31,10 +31,9 @@ export const Navbar = () => {
             >
               Favoritos{"" + store.Favorito.length}
             </button>
-            <ul className="dropdown-menu" 
-            aria-labelledby="dropdownMenuButton1">
-              {store.Favorito.length>0
-                ? store.Favorito.map((item,index) => (
+            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              {store.Favorito.length > 0
+                ? store.Favorito.map((item, index) => (
                     <li key={index}>
                       <i
                         className="bi bi-trash-fill position-absolute top-40 end-0 "
