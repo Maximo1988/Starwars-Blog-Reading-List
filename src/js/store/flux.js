@@ -19,6 +19,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       planeta: [],
       naves: [],
       nave: [],
+      favorito: [],
     },
 
     actions: {
@@ -57,6 +58,16 @@ const getState = ({ getStore, getActions, setStore }) => {
             setStore({ naves: response.results });
           })
           .catch(console.error());
+      },
+
+      AgregarFavorito:(fav)=>{
+        setStore({Favorito:getStore().Favorito.concat(fav)})
+      },
+
+      EliminarFavorito:(i)=>{
+        setStore({Favorito: getStore().Favorito.filter(
+          (item,index) => index !== i)})
+        console.log("funciona");
       },
 
       changeColor: (index, color) => {
