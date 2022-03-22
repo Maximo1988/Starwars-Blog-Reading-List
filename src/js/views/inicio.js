@@ -13,36 +13,38 @@ const Inicio = (props) => {
       <div className="col-2 bg-dark"></div>
       <div className="col-8 bg-light">
         <ul>
-          <Link to="/Cardpeople">
             <li>
               <h3 className="mt-3">Personajes</h3>
-              {store.personajes.map((itempersonaje, i) => {
+              <div className="row flex-row flex-nowrap MyScroll">
+                {store.personajes.map((itempersonaje, i) => {
                 return (
+                  <div className="col-3">
                   <Cardpeople key={i} item={itempersonaje} uid={i+1}/>
+                  </div>
                 );
               })}
+              </div>
             </li>
-          </Link>
-          <Link to="/Cardplanets">
             <li>
               <h3 className="mt-3">Planetas</h3>
+              <div className="row flex-row flex-nowrap MyScroll">
               {store.planetas.map((itemplaneta, i) => {
                 return (
                   <Cardplanets key={itemplaneta.url} item={itemplaneta} />
               );
               })}
+              </div>
             </li>
-          </Link>
-          <Link to="/Cardstarships">
             <li>
               <h3 className="mt-3">Naves</h3>
+              <div className="row flex-row flex-nowrap MyScroll">
               {store.naves.map((itemnave, i) => {
                 return (
                 <Cardstarships key={itemnave.url} item={itemnave} />
                 );
               })}
+              </div>
             </li>
-          </Link>
         </ul>
       </div>
       <div className="col-2 bg-dark"></div>

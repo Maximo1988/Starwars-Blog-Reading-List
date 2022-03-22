@@ -1,4 +1,13 @@
-
 .StarWars {
-    padding-left: 500%;
+  padding-left: 300%;
+}
+.MyScroll {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  background-color: white;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+li {
+    list-style: none;
 }

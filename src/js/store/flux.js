@@ -61,12 +61,14 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
 
       AgregarFavorito:(fav)=>{
-        setStore({Favorito:getStore().Favorito.concat(fav)})
+        let copyFavorito = getStore().favorito
+        copyFavorito.push(fav)
+        setStore({favorito:copyFavorito})
       },
 
       EliminarFavorito:(i)=>{
-        setStore({Favorito: getStore().Favorito.filter(
-          (index) => index !== i)})
+        setStore({favorito: getStore().favorito.filter(
+          (item, index) => index !== i)})
         console.log("funciona");
       },
 

@@ -4,6 +4,10 @@ import { Context } from "../store/appContext";
 
 export const Navbar = () => {
   const { store, actions } = useContext(Context);
+  const [toggle, setToggle] = useState(false);
+  let toggleOpen = () => {
+    return setToggle(!toggle)}
+  const menuClass = `dropdown-menu${toggle ? " show" : ""}`;
   return (
     <nav className="navbar navbar-dark bg-light mb-3">
       <div className="container">
@@ -21,7 +25,7 @@ export const Navbar = () => {
         </Link>
 
         <div className="ml-auto">
-          <div className="dropdown">
+          <div className="dropdown" onClick={() => toggleOpen()}>
             <button
               className="btn btn-primary dropdown-toggle"
               type="button"
@@ -29,20 +33,19 @@ export const Navbar = () => {
               data-toggle="dropdown"
               aria-expanded="false"
             >
-              Favoritos{"" + store.Favorito.length}
+              Favoritos{"" + store.favorito.length}
             </button>
-            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              {store.Favorito.length > 0
-                ? store.Favorito.map((item, index) => (
+            <ul className= {menuClass} aria-labelledby="dropdownMenuButton1">
+              {store.favorito.length > 0
+                ? store.favorito.map((item, index) => (
                     <li key={index}>
                       <i
-                        className="bi bi-trash-fill position-absolute top-40 end-0 "
-                        onClick={() => actions.eliminarFavorito(index)}
-                      ></i>
-                      {item}
+                        className="fa fa-solid fa-trash"
+                        onClick={() => actions.EliminarFavorito(index)}
+                      >{item}</i>
                     </li>
                   ))
-                : "Empty"}
+                : <li>Empty</li>}
             </ul>
           </div>
         </div>
