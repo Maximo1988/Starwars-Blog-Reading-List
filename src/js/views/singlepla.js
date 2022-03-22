@@ -10,26 +10,31 @@ export const Singlepla = (props) => {
     actions.getPlanet(params.uid);
   }, []);
   return (
-    <div className="container">
+    <div className="container col-8">
       <div className="row">
-        <div className="col-lg-6 col-6">
+        <div className="col-lg-4 col-4">
           <img
             src={`https://starwars-visualguide.com/assets/img/planets/${params.uid}.jpg`}
             alt=""
             style={{ width: "100%" }}
+            onError={({ currentTarget }) => {
+              currentTarget.onerror = null; // prevents looping
+              currentTarget.src =
+                "https://starwars-visualguide.com/assets/img/placeholder.jpg";
+            }}
           />
         </div>
-        <div className="col-lg-6 col-6 text-center">
+        <div className="col-lg-8 col-8 text-center">
           <h1>{store.planeta.properties && store.planeta.properties.name}</h1>
           <p>{store.planeta.description}</p>
         </div>
       </div>
       <hr className="text-danger" />
       <div className="row">
-        <div className="col-12">
+        <div className="col-8">
           <table
             border="0"
-            className="text-danger fw-bold text-center mx-auto fs-5"
+            className="text-danger fw-bold text-center mx-auto"
           >
             <thead>
               <tr>

@@ -14,7 +14,7 @@ const Inicio = (props) => {
       <div className="col-8 bg-light">
         <ul>
             <li>
-              <h3 className="mt-3">Personajes</h3>
+              <h3 className="mt-3 text-danger">Personajes</h3>
               <div className="row flex-row flex-nowrap MyScroll">
                 {store.personajes.map((itempersonaje, i) => {
                 return (
@@ -26,21 +26,25 @@ const Inicio = (props) => {
               </div>
             </li>
             <li>
-              <h3 className="mt-3">Planetas</h3>
+              <h3 className="mt-3 text-danger">Planetas</h3>
               <div className="row flex-row flex-nowrap MyScroll">
               {store.planetas.map((itemplaneta, i) => {
                 return (
+                  <div className="col-3">
                   <Cardplanets key={itemplaneta.url} item={itemplaneta} />
+                  </div>
               );
               })}
               </div>
             </li>
             <li>
-              <h3 className="mt-3">Naves</h3>
+              <h3 className="mt-3 text-danger">Naves</h3>
               <div className="row flex-row flex-nowrap MyScroll">
               {store.naves.map((itemnave, i) => {
                 return (
+                  <div className="col-3">
                 <Cardstarships key={itemnave.url} item={itemnave} />
+                </div>
                 );
               })}
               </div>
