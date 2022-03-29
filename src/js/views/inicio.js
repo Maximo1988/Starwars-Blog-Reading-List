@@ -9,7 +9,7 @@ const Inicio = (props) => {
   const { store, actions } = useContext(Context);
   
   return (
-    <div className="row flex-fill vh-100">
+    <div className="row flex-fill">
       <div className="col-2 bg-dark"></div>
       <div className="col-8 bg-light">
         <ul>
@@ -18,8 +18,8 @@ const Inicio = (props) => {
               <div className="row flex-row flex-nowrap MyScroll">
                 {store.personajes.map((itempersonaje, i) => {
                 return (
-                  <div className="col-3">
-                  <Cardpeople key={i} item={itempersonaje} uid={i+1}/>
+                  <div className="col-3" key={i}>
+                  <Cardpeople item={itempersonaje} uid={i+1}/>
                   </div>
                 );
               })}
@@ -30,8 +30,8 @@ const Inicio = (props) => {
               <div className="row flex-row flex-nowrap MyScroll">
               {store.planetas.map((itemplaneta, i) => {
                 return (
-                  <div className="col-3">
-                  <Cardplanets key={itemplaneta.url} item={itemplaneta} />
+                  <div className="col-3" key={i}>
+                  <Cardplanets item={itemplaneta} uid={i+1}/>
                   </div>
               );
               })}
@@ -42,8 +42,8 @@ const Inicio = (props) => {
               <div className="row flex-row flex-nowrap MyScroll">
               {store.naves.map((itemnave, i) => {
                 return (
-                  <div className="col-3">
-                <Cardstarships key={itemnave.url} item={itemnave} />
+                  <div className="col-3" key={i}>
+                <Cardstarships item={itemnave} uid={i+1}/>
                 </div>
                 );
               })}

@@ -18,7 +18,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 	    planetas: [],
       planeta: [],
       naves: [],
-      nave: [],
+      starship: [],
       favorito: [],
     },
 
@@ -97,16 +97,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
       getPlanet: id => {
 				const store = getStore();
-				fetch("https://www.swapi.tech/api/planet/" + id)
+				fetch("https://www.swapi.tech/api/planets/" + id)
 					.then(res => res.json())
 					.then(data => {
-						setStore({planet: data.result });
+						setStore({planeta: data.result });
+            console.log(data.result);
 					})
 					.catch(err => err);
 			},
       getStarship: id => {
 				const store = getStore();
-				fetch("https://www.swapi.tech/api/starship/" + id)
+				fetch("https://www.swapi.tech/api/starships/" + id)
 					.then(res => res.json())
 					.then(data => {
 						setStore({starship: data.result });

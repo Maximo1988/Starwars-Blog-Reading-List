@@ -3,12 +3,13 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
-const Cardplanets = ({ item }) => {
+const Cardplanets = ({ item, uid}) => {
+  console.log(item);
   const { actions, store } = useContext(Context);
   return (
     <div className="card mb-3" style={{ maxWidth: "250px" }}>
       <img
-        src={`https://starwars-visualguide.com/assets/img/planets/${item.uid}.jpg`}
+        src={`https://starwars-visualguide.com/assets/img/planets/${uid}.jpg`}
         className="card-img-top"
         onError={({ currentTarget }) => {
           currentTarget.onerror = null; // prevents looping
@@ -26,7 +27,7 @@ const Cardplanets = ({ item }) => {
         </p>
         <div className="row">
           <div className="col-8">
-            <Link to={`/singlepla/${item.uid}`} className="btn btn-primary">
+            <Link to={`/singlepla/${uid}`} className="btn btn-primary">
               Learn more!
             </Link>
           </div>

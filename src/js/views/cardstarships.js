@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
-const Cardstarships = ({ item }) => {
+const Cardstarships = ({ item, uid }) => {
   const { actions, store } = useContext(Context);
   return (
     <div className="card mb-3" style={{ maxWidth: "250px" }}>
