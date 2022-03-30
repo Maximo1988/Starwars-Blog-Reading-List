@@ -6,7 +6,7 @@ import { Context } from "../store/appContext";
 export const Singlests = (props) => {
   const { store, actions } = useContext(Context);
   const params = useParams();
-  console.log(store,actions);
+  console.log(store, actions);
   useEffect(() => {
     actions.getStarship(params.uid);
   }, []);
@@ -49,9 +49,14 @@ export const Singlests = (props) => {
             </thead>
             <tbody>
               <tr>
-                <td>
-                  {store.starship.properties && store.starship.properties.model}
-                </td>
+                {store.starship?.uid === params.uid ? (
+                  <td>
+                    {store.starship.properties &&
+                      store.starship.properties.model}
+                  </td>
+                ) : (
+                  <td>Cargando...</td>
+                )}
                 <td>
                   {store.starship.properties &&
                     store.starship.properties.starship_class}

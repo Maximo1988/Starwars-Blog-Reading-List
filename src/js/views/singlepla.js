@@ -32,10 +32,7 @@ export const Singlepla = (props) => {
       <hr className="text-danger" />
       <div className="row">
         <div className="col-8">
-          <table
-            border="0"
-            className="text-danger fw-bold text-center mx-auto"
-          >
+          <table border="0" className="text-danger fw-bold text-center mx-auto">
             <thead>
               <tr>
                 <th>Diameter</th>
@@ -48,10 +45,14 @@ export const Singlepla = (props) => {
             </thead>
             <tbody>
               <tr>
-                <td>
-                  {store.planeta.properties &&
-                    store.planeta.properties.diameter}
-                </td>
+                {store.planeta?.uid === params.uid ? (
+                  <td>
+                    {store.planeta.properties &&
+                      store.planeta.properties.diameter}
+                  </td>
+                ) : (
+                  <td>Cargando...</td>
+                )}
                 <td>
                   {store.planeta.properties &&
                     store.planeta.properties.rotation_period}

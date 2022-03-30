@@ -20,17 +20,16 @@ export const Singlepsj = (props) => {
           />
         </div>
         <div className="col-lg-8 col-8 text-center">
-          <h1>{store.personaje.properties && store.personaje.properties.name}</h1>
+          <h1>
+            {store.personaje.properties && store.personaje.properties.name}
+          </h1>
           <p>{store.personaje.description}</p>
         </div>
       </div>
       <hr className="text-danger" />
       <div className="row">
         <div className="col-8">
-          <table
-            border="0"
-            className="text-danger fw-bold text-center mx-auto"
-          >
+          <table border="0" className="text-danger fw-bold text-center mx-auto">
             <thead>
               <tr>
                 <th>Name</th>
@@ -43,12 +42,34 @@ export const Singlepsj = (props) => {
             </thead>
             <tbody>
               <tr>
-                <td>{store.personaje.properties && store.personaje.properties.name}</td>
-                <td>{store.personaje.properties && store.personaje.properties.birth_year}</td>
-                <td>{store.personaje.properties && store.personaje.properties.gender}</td>
-                <td>{store.personaje.properties && store.personaje.properties.height}</td>
-                <td>{store.personaje.properties && store.personaje.properties.skin_color}</td>
-                <td>{store.personaje.properties && store.personaje.properties.eye_color}</td>
+                {store.personaje?.uid === params.uid ? (
+                  <td>
+                    {store.personaje.properties &&
+                      store.personaje.properties.name}
+                  </td>
+                ) : (
+                  <td>Cargando...</td>
+                )}
+                <td>
+                  {store.personaje.properties &&
+                    store.personaje.properties.birth_year}
+                </td>
+                <td>
+                  {store.personaje.properties &&
+                    store.personaje.properties.gender}
+                </td>
+                <td>
+                  {store.personaje.properties &&
+                    store.personaje.properties.height}
+                </td>
+                <td>
+                  {store.personaje.properties &&
+                    store.personaje.properties.skin_color}
+                </td>
+                <td>
+                  {store.personaje.properties &&
+                    store.personaje.properties.eye_color}
+                </td>
               </tr>
             </tbody>
           </table>
